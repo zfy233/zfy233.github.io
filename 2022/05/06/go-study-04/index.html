@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		
+<title>go_study_04-</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" type="image/x-icon" href="/image/favicon.ico">
+
+
+<meta name="keywords" content="go,">
+<meta name="description" content="">
+
+
+<script src="/js/jquery.min.js"></script>
+
+
+	<meta name="generator" content="Hexo 6.1.0"></head>
+
+	<body>
+		
+<link rel="stylesheet" href="/css/page.css">
+
+
+<link rel="stylesheet" href="/css/page_cente.css">
+
+
+<link rel="stylesheet" href="/css/atom-one-dark.css">
+
+
+<link rel="stylesheet" href="/css/header.css">
+
+	<div class="header">
+		<div class="header-top">
+			<div class="h-left">
+				<a href="/">
+					<img src="/image/logo.jpeg" alt="Quiet">
+				</a>
+			</div>
+			<div class="h-right">
+				<ul>
+					
+						
+								<li>
+									<a href="/">
+										HOME
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/archives">
+										ARCHIVE
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/categories">
+										CATEGORIES
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/tags">
+										TAGS
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/about">
+										ABOUT
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+				</ul>
+			</div>
+			<div class="h-right-close">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+					<path fill="none" d="M0 0h24v24H0z" />
+					<path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" fill="rgba(68,68,68,1)" />
+				</svg>
+			</div>
+		</div>
+	</div>
+	<div class="sidebar">
+    <div class="topo">
+        <h2>zfy233</h2>
+    </div>
+    <ul>
+        
+        <li>
+            <a href="/">HOME</a>
+        </li>
+        
+        <li>
+            <a href="/archives">ARCHIVE</a>
+        </li>
+        
+        <li>
+            <a href="/categories">CATEGORIES</a>
+        </li>
+        
+        <li>
+            <a href="/tags">TAGS</a>
+        </li>
+        
+        <li>
+            <a href="/about">ABOUT</a>
+        </li>
+        
+    </ul>
+    <div class="my_foot">
+        
+        <a target="_blank" rel="noopener" href="https://github.com/zfy233">
+            <img src="https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imggithub.png" alt="Quiet主题">
+        </a>
+        
+    </div>
+</div>
+<div class='shelter'
+    style='cursor: pointer;display: none; position: fixed;left: 0;top: 0; right: 0;bottom: 0;background-color: #333;opacity:0.5;z-index: 108;'>
+</div>
+<style>
+    .sidebar {
+        width: 0;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: #fff;
+        z-index: 999;
+        text-align: center;
+        box-shadow: -6px 0 20px rgba(98, 94, 94, .815)
+    }
+
+    .topo {
+        width: 100%;
+        height: 200px;
+        background: url(https://api.ixiaowai.cn/gqapi/gqapi.php) no-repeat;
+        background-size: 100% 100%;
+        position: relative;
+        display: flex;
+        align-items: flex-end
+    }
+
+    .topo h2 {
+        color: #fff;
+        z-index: 1;
+        position: relative;
+        margin: 0 0 10px 10px;
+        font-size: 1.2em;
+        box-sizing: border-box
+    }
+
+    .topo:before {
+        content: '';
+        background-image: url(/image/pattern.png);
+        background-repeat: repeat;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 1
+    }
+
+    .sidebar ul {
+        width: 100%;
+        margin-top: 50px
+    }
+
+    .sidebar ul li {
+        height: 50px;
+        list-style: none;
+        font-size: 1.2em;
+        text-align: right;
+        margin-right: 10px
+    }
+
+    .sidebar ul li a {
+        display: grid;
+        color: #5d606a;
+        text-overflow: ellipsis;
+        width: 100%;
+        text-decoration: none
+    }
+
+    .my_foot {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        position: absolute;
+        bottom: 0
+    }
+
+    .my_foot a {
+        text-decoration: none;
+        margin-right: 10px;
+        display: inline-block
+    }
+
+    .my_foot a img {
+        width: 30px;
+        height: 30px
+    }
+</style>
+
+<script>
+    $(function () { $('.h-right-close>svg').click(function () { $('.sidebar').animate({ width: "66%" }, 500); $('.shelter').fadeIn("slow") }); $('.shelter').click(function (e) { $('.sidebar').animate({ width: "0" }, 500); $('.shelter').fadeOut("slow") }) })
+</script>
+		<script>
+			$(function () { $(window).scroll(function () { if ($(document).scrollTop() > 100) { $(".header-top").removeClass("header-move2"); $('.header-top').addClass('header-move1') } else { $(".header-top").removeClass("header-move1"); $('.header-top').addClass('header-move2') } }) });
+		</script>
+<div class="header-bg ">
+    <div class="bg-content">
+        <ul class="tag">
+            
+            
+            <li><a href="/tags/go">go</a></li>
+            
+            
+        </ul>
+        <h1>go_study_04</h1>
+        <div class="article-info">
+            <div class="article-author">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                    <g>
+                        <path fill="#12183A"
+                            d="M6.187 15.265A6.47 6.47 0 0 0 10 16.5a6.47 6.47 0 0 0 3.813-1.235A4.99 4.99 0 0 0 10 13.5a4.99 4.99 0 0 0-3.813 1.765zM5.082 14.25A6.485 6.485 0 0 1 10 12c1.965 0 3.726.872 4.918 2.25a6.5 6.5 0 1 0-9.836 0zM10 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0-1.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z">
+                        </path>
+                    </g>
+                </svg>
+                
+                <span> <a href="">zfy233</a></span>
+                <p>2022-05-06 21:59:41</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="article-content">
+    <div id="article" class="content">
+        <h3 id="一些笔记"><a href="#一些笔记" class="headerlink" title="一些笔记"></a>一些笔记</h3><h4 id="包问题"><a href="#包问题" class="headerlink" title="包问题"></a>包问题</h4><p>统一package下 就算包名不是 main  也可以改成 package main</p>
+<p>一改的话 该包下所有的都会改成 package main</p>
+<p>不同package 下的 package main 其实是不互通的</p>
+<p>且改为package main 之后  用 文件名的 import 无法导入 也无法 导入 main 包</p>
+<p>由此可见 main 包下一般都只有 纯粹的 调用其他包的main 方法</p>
+<h3 id="hashMap"><a href="#hashMap" class="headerlink" title="hashMap"></a>hashMap</h3><p>键和其在<code>map</code>中对应的值。<code>map</code>的迭代顺序并不确定，从实践来看，该顺序随机，每次运行都会变化。这种设计是有意为之的，因为能防止程序依赖特定遍历顺序，而这是无法保证的。</p>
+<h3 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h3><p>handler 和 handlerfunc</p>
+<p>handler：   实现了 ServeHTTP 接口的 struct</p>
+<p>handlerfunc  参数 为 resp 和 request</p>
+<p>服务器接收到 请求后 ，  会另起一个 goroutine去处理</p>
+<h3 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h3><p>Go语言主要有四种类型的声明语句：var、const、type和func，分别对应变量、常量、类型和函数实体对象的声明</p>
+<p>在包一级声明语句声明的名字可在整个包对应的每个源文件中访问，而不是仅仅在其声明语句所在的源文件中访问。相比之下，局部声明的名字就只能在函数内部很小的范围被访问</p>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><figure class="highlight go"><table><tr><td class="code"><pre><code class="hljs Go"><span class="hljs-keyword">var</span> 变量名字 类型 = 表达式<br><span class="hljs-comment">// 类型或者 表达式可以省略</span><br></code></pre></td></tr></table></figure>
+
+<p>零值初始化机制可以确保每个声明的变量总是有一个良好定义的值，因此在Go语言中不存在未初始化的变量</p>
+<h3 id="简短变量声明"><a href="#简短变量声明" class="headerlink" title="简短变量声明"></a>简短变量声明</h3><p>只能在函数中使用   ：&#x3D;</p>
+<p>var形式的声明语句往往是用于需要显式指定变量类型的地方，或者因为变量稍后会被重新赋值而初始值无关紧要的地方。</p>
+<p>简短变量声明语句只有对已经在同级词法域声明过的变量才和赋值操作语句等价，如果变量是在外部词法域声明的，那么简短变量声明语句将会在当前词法域重新声明一个新的变量</p>
+<h3 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h3><p>一个指针的值是另一个变量的地址。</p>
+<p>*int  的指针</p>
+<p>指针p    *p   p的值</p>
+<p>如果用“var x int”声明语句声明一个x变量，那么&amp;x表达式（取x变量的内存地址）将产生一个指向该整数变量的指针，指针对应的数据类型是<code>*int</code>，指针被称之为“指向int类型的指针”</p>
+<h3 id="New"><a href="#New" class="headerlink" title="New()"></a>New()</h3><p>另一个创建变量的方法是调用内建的new函数。表达式new(T)将创建一个T类型的匿名变量，初始化为T类型的零值，然后返回变量地址，返回的指针类型为<code>*T</code>。</p>
+<p>值得一提的是， 返回的是指针</p>
+<h3 id="变量的垃圾回收"><a href="#变量的垃圾回收" class="headerlink" title="变量的垃圾回收"></a>变量的垃圾回收</h3><p>基本的实现思路是，从每个包级的变量和每个当前运行函数的每一个局部变量开始，通过指针或引用的访问路径遍历，是否可以找到该变量。如果不存在这样的访问路径，那么说明该变量是不可达的</p>
+<h3 id="堆和栈"><a href="#堆和栈" class="headerlink" title="堆和栈"></a>堆和栈</h3><figure class="highlight go"><table><tr><td class="code"><pre><code class="hljs Go"><span class="hljs-keyword">var</span> global *<span class="hljs-type">int</span><br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">f</span><span class="hljs-params">()</span></span> &#123;<br>    <span class="hljs-keyword">var</span> x <span class="hljs-type">int</span><br>    x = <span class="hljs-number">1</span><br>    global = &amp;x<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">g</span><span class="hljs-params">()</span></span> &#123;<br>    y := <span class="hljs-built_in">new</span>(<span class="hljs-type">int</span>)<br>    *y = <span class="hljs-number">1</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>全局变量 ：   </p>
+<p>x 可以被全局变量 访问到 （逃逸）  因此分配在堆上</p>
+<p>局部变量：</p>
+<h3 id="元组赋值"><a href="#元组赋值" class="headerlink" title="元组赋值"></a>元组赋值</h3><p>元组赋值是另一种形式的赋值语句，它允许同时更新多个变量的值。在赋值之前，赋值语句右边的所有表达式将会先进行求值，然后再统一更新左边对应变量的值。</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><code class="hljs Go">x, y = y, x<br><br>a[i], a[j] = a[j], a[i]<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight go"><table><tr><td class="code"><pre><code class="hljs Go">v, ok = m[key]             <span class="hljs-comment">// map lookup</span><br>v, ok = x.(T)              <span class="hljs-comment">// type assertion</span><br>v, ok = &lt;-ch               <span class="hljs-comment">// channel receive</span><br></code></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight go"><table><tr><td class="code"><pre><code class="hljs go">s1 := <span class="hljs-string">&quot;zfy&quot;</span><br>s2 := <span class="hljs-string">&quot;zfy&quot;</span><br>fmt.Println(s1 == s2)<br><span class="hljs-comment">// true 可以直接比较</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h3><figure class="highlight go"><table><tr><td class="code"><pre><code class="hljs Go"><span class="hljs-keyword">type</span> 类型名字 底层类型<br></code></pre></td></tr></table></figure>
+
+<p>类型声明语句一般出现在包一级，因此如果新创建的类型名字的首字符大写，则在包外部也可以使用。</p>
+<h3 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h3><p>对于每一个类型T，都有一个对应的类型转换操作T(x)，用于将x转为T类型（译注：如果T是指针类型，可能会需要用小括弧包装T，比如<code>(*int)(0)</code>）。只有当两个类型的底层基础类型相同时，才允许这种转型操作，或者是两者都是指向相同底层结构的指针类型，这些转换只改变类型而不会影响值本身。</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><code class="hljs go">a := <span class="hljs-string">&quot;123&quot;</span><br>fmt.Println(<span class="hljs-type">int</span>(a))<br><span class="hljs-comment">// 这样转换会报错</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight go"><table><tr><td class="code"><pre><code class="hljs Go"><span class="hljs-keyword">type</span> Celsius <span class="hljs-type">float64</span>    <span class="hljs-comment">// 摄氏温度</span><br><span class="hljs-keyword">type</span> Fahrenheit <span class="hljs-type">float64</span> <span class="hljs-comment">// 华氏温度</span><br><br><span class="hljs-keyword">var</span> c Celsius<br><span class="hljs-keyword">var</span> f Fahrenheit<br>fmt.Println(c == <span class="hljs-number">0</span>)          <span class="hljs-comment">// &quot;true&quot;</span><br>fmt.Println(f &gt;= <span class="hljs-number">0</span>)          <span class="hljs-comment">// &quot;true&quot;</span><br>fmt.Println(c == f)          <span class="hljs-comment">// compile error: type mismatch</span><br>fmt.Println(c == Celsius(f)) <span class="hljs-comment">// &quot;true&quot;!</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p>一般少用数组 多用切片</p>
+<p>数组的长度必须是常量表达式，因为数组的长度需要在编译阶段确定。</p>
+<p>如果一个数组的元素类型是可以相互比较的，那么数组类型也是可以相互比较的，这时候我们可以直接通过&#x3D;&#x3D;比较运算符来比较两个数组，只有当两个数组的所有元素都是相等的时候数组才是相等的。不相等比较运算符!&#x3D;遵循同样的规则。</p>
+<h3 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h3><p>[]T</p>
+<p>一个slice由三个部分构成：指针、长度和容量</p>
+<p>指针指向第一个slice元素对应的底层数组元素的地址，要注意的是slice的第一个元素并不一定就是数组的第一个元素。长度对应slice中元素的数目；长度不能超过容量，容量一般是从slice的开始位置到底层数据的结尾位置。内置的len和cap函数分别返回slice的长度和容量。</p>
+<p>如果切片操作超出cap(s)的上限将导致一个panic异常，但是超出len(s)则是意味着扩展了slice，因为新slice的长度会变大：</p>
+<p>因为slice值包含指向第一个slice元素的指针，因此向函数传递slice将允许在函数内部修改底层数组的元素。 （与数组不同）</p>
+<p>和数组不同的是，slice之间不能比较，因此我们不能使用&#x3D;&#x3D;操作符来判断两个slice是否含有全部相等元素。</p>
+<p>长度为0的数组 和 nil 不一样</p>
+<h3 id="append"><a href="#append" class="headerlink" title="append"></a>append</h3><p>每次调用appendInt函数，必须先检测slice底层数组是否有足够的容量来保存新添加的元素。如果有足够空间的话，直接扩展slice（依然在原有的底层数组之上），将新添加的y元素复制到新扩展的空间，并返回slice。因此，输入的x和输出的z共享相同的底层数组。</p>
+<p>如果没有足够的增长空间的话，appendInt函数则会先分配一个足够大的slice用于保存新的结果，先将输入的x复制到新的空间，然后添加y元素。结果z和输入的x引用的将是不同的底层数组。</p>
+<h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3><p>map[K]V   其中K对应的key必须是支持&#x3D;&#x3D;比较运算符的数据类型</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><code class="hljs Go">ages := <span class="hljs-built_in">make</span>(<span class="hljs-keyword">map</span>[<span class="hljs-type">string</span>]<span class="hljs-type">int</span>) <span class="hljs-comment">// mapping from strings to ints</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight go"><table><tr><td class="code"><pre><code class="hljs Go">_ = &amp;ages[<span class="hljs-string">&quot;bob&quot;</span>] <span class="hljs-comment">// compile error: cannot take address of map element</span><br></code></pre></td></tr></table></figure>
+
+<p>map上的大部分操作，包括查找、删除、len和range循环都可以安全工作在nil值的map上，它们的行为和一个空的map类似。但是向一个nil值的map存入元素将导致一个panic异常：</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><code class="hljs Go">age, ok := ages[<span class="hljs-string">&quot;bob&quot;</span>]<br><span class="hljs-keyword">if</span> !ok &#123; <span class="hljs-comment">/* &quot;bob&quot; is not a key in this map; age == 0. */</span> &#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<p>set：  map[string]bool    这种类型</p>
+<p>有时候 key  为 slice  （不可&#x3D;&#x3D; 比较）   则需要辅助函数 hash</p>
+<h3 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h3><p>类似java中的类</p>
+<p>如果结构体成员名字是以大写字母开头的，那么该成员就是导出的</p>
+<p>一个命名为S的结构体类型将不能再包含S类型的成员：因为一个聚合的值不能包含它自身。（该限制同样适用于数组。）但是S类型的结构体可以包含<code>*S</code>指针类型的成员，这可以让我们创建递归的数据结构</p>
+<p>初始化</p>
+<p>如果要在函数内部修改结构体成员的话，用指针传入是必须的；因为在Go语言中，所有的函数参数都是值拷贝传入的（除去slice），函数参数将不再是函数调用时的原始变量。</p>
+<p>如果结构体的全部成员都是可以比较的，那么结构体也是可以比较的，那样的话两个结构体将可以使用&#x3D;&#x3D;</p>
+<h3 id="匿名成员"><a href="#匿名成员" class="headerlink" title="匿名成员"></a>匿名成员</h3><figure class="highlight go"><table><tr><td class="code"><pre><code class="hljs Go"><span class="hljs-keyword">type</span> Circle <span class="hljs-keyword">struct</span> &#123;<br>    Point<br>    Radius <span class="hljs-type">int</span><br>&#125;<br><br><span class="hljs-keyword">type</span> Wheel <span class="hljs-keyword">struct</span> &#123;<br>    Circle<br>    Spokes <span class="hljs-type">int</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight go"><table><tr><td class="code"><pre><code class="hljs Go"><span class="hljs-keyword">var</span> w Wheel<br>w.X = <span class="hljs-number">8</span>            <span class="hljs-comment">// equivalent to w.Circle.Point.X = 8</span><br>w.Y = <span class="hljs-number">8</span>            <span class="hljs-comment">// equivalent to w.Circle.Point.Y = 8</span><br>w.Radius = <span class="hljs-number">5</span>       <span class="hljs-comment">// equivalent to w.Circle.Radius = 5</span><br>w.Spokes = <span class="hljs-number">20</span><br></code></pre></td></tr></table></figure>
+
+
+
+<p>但是只能</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><code class="hljs Go">w = Wheel&#123;Circle&#123;Point&#123;<span class="hljs-number">8</span>, <span class="hljs-number">8</span>&#125;, <span class="hljs-number">5</span>&#125;, <span class="hljs-number">20</span>&#125;<br><br>w = Wheel&#123;<br>    Circle: Circle&#123;<br>        Point:  Point&#123;X: <span class="hljs-number">8</span>, Y: <span class="hljs-number">8</span>&#125;,<br>        Radius: <span class="hljs-number">5</span>,<br>    &#125;,<br>    Spokes: <span class="hljs-number">20</span>, <span class="hljs-comment">// <span class="hljs-doctag">NOTE:</span> trailing comma necessary here (and at Radius)</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>因为匿名成员也有一个隐式的名字，因此不能同时包含两个类型相同的匿名成员，这会导致名字冲突。</p>
+<p>但是在包外部，因为circle和point没有导出（小写不能导出 大写可以），不能访问它们的成员，因此简短的匿名成员访问语法也是禁止的。</p>
+<h3 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h3><p>基本的JSON类型有数字（十进制或科学记数法）、布尔值（true或false）、字符串</p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><code class="hljs pgsql"><span class="hljs-type">boolean</span>         <span class="hljs-keyword">true</span><br>number          <span class="hljs-number">-273.15</span><br>string          &quot;She said \&quot;Hello, BF\&quot;&quot;<br><span class="hljs-keyword">array</span>           [&quot;gold&quot;, &quot;silver&quot;, &quot;bronze&quot;]<br><span class="hljs-keyword">object</span>          &#123;&quot;year&quot;: <span class="hljs-number">1980</span>,<br>                 &quot;event&quot;: &quot;archery&quot;,<br>                 &quot;medals&quot;: [&quot;gold&quot;, &quot;silver&quot;, &quot;bronze&quot;]&#125;<br></code></pre></td></tr></table></figure>
+
+<p>将一个Go语言中类似movies的结构体slice转为JSON的过程叫编组（marshaling）</p>
+<p>结构体的成员Tag可以是任意的字符串面值，但是通常是一系列用空格分隔的key:”value”键值对序列</p>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="函数声明"><a href="#函数声明" class="headerlink" title="函数声明"></a>函数声明</h3><figure class="highlight go"><table><tr><td class="code"><pre><code class="hljs Go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">name</span><span class="hljs-params">(parameter-list)</span></span> (result-list) &#123;<br>    body<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>函数的类型被称为函数的签名。如果两个函数形式参数列表和返回值列表中的变量类型一一对应，那么这两个函数被认为有相同的类型或签名</p>
+<p>实参通过值的方式传递，因此函数的形参是实参的拷贝。对形参进行修改不会影响实参。但是，如果实参包括引用类型，如指针，slice(切片)、map、function、channel等类型，实参可能会由于函数的间接引用被修改</p>
+<p>值得注意的是：   如果传入的是  chan，还是值传递</p>
+<p>传入 map  slice  （并非其指针）     是 按引用传递</p>
+<p>所以 如果是按 引用传值      最好还是传指针</p>
+<h3 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h3><p>nil意味着函数运行成功，non-nil表示失败。对于non-nil的error类型，我们可以通过调用error的Error函数或者输出函数获得字符串类型的错误信息。</p>
+<h3 id="函数值"><a href="#函数值" class="headerlink" title="函数值"></a>函数值</h3><p>在Go中，函数被看作第一类值（first-class values）：函数像其他值一样，拥有类型，可以被赋值给其他变量，传递给函数，从函数返回</p>
+<p>函数类型的零值是nil。调用值为nil的函数值会引起panic错误：</p>
+<p>函数值可以与nil比较，  但是函数值之间是不可比较的，也不能用函数值作为map的key。</p>
+<h3 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h3><p>函数字面量允许我们在使用函数时，再定义它</p>
+<p>更为重要的是，通过这种方式定义的函数可以访问完整的词法环境（lexical environment），这意味着在函数中定义的内部函数可以引用该函数的变量，如下例所示：</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><code class="hljs Go"><span class="hljs-comment">// squares返回一个匿名函数。</span><br><span class="hljs-comment">// 该匿名函数每次被调用时都会返回下一个数的平方。</span><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">squares</span><span class="hljs-params">()</span></span> <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">()</span></span> <span class="hljs-type">int</span> &#123;<br>    <span class="hljs-keyword">var</span> x <span class="hljs-type">int</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">()</span></span> <span class="hljs-type">int</span> &#123;<br>        x++<br>        <span class="hljs-keyword">return</span> x * x<br>    &#125;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;<br>    f := squares()<br>    fmt.Println(f()) <span class="hljs-comment">// &quot;1&quot;</span><br>    fmt.Println(f()) <span class="hljs-comment">// &quot;4&quot;</span><br>    fmt.Println(f()) <span class="hljs-comment">// &quot;9&quot;</span><br>    fmt.Println(f()) <span class="hljs-comment">// &quot;16&quot;</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>通过这个例子，我们看到变量的生命周期不由它的作用域决定：squares返回后，变量x仍然隐式的存在于f中。 </p>
+<p>当匿名函数需要被递归调用时，我们必须首先声明一个变量（在上面的例子中，我们首先声明了 visitAll），再将匿名函数赋值给这个变量。如果不分成两步，函数字面量无法与visitAll绑定，我们也无法递归调用该匿名函数。               <strong>注意是递归</strong></p>
+<h3 id="可变参数"><a href="#可变参数" class="headerlink" title="可变参数"></a>可变参数</h3><figure class="highlight go"><table><tr><td class="code"><pre><code class="hljs Go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">sum</span><span class="hljs-params">(vals ...<span class="hljs-type">int</span>)</span></span> <span class="hljs-type">int</span> &#123;<br>    total := <span class="hljs-number">0</span><br>    <span class="hljs-keyword">for</span> _, val := <span class="hljs-keyword">range</span> vals &#123;<br>        total += val<br>    &#125;<br>    <span class="hljs-keyword">return</span> total<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight go"><table><tr><td class="code"><pre><code class="hljs Go">values := []<span class="hljs-type">int</span>&#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>&#125;<br>fmt.Println(sum(values...)) <span class="hljs-comment">// &quot;10&quot;</span><br></code></pre></td></tr></table></figure>
+
+
+
+<p>defer： 在函数执行完成后，才执行该语句              多个defer时顺序和栈一样</p>
+<h3 id="Panic"><a href="#Panic" class="headerlink" title="Panic"></a>Panic</h3><p>Go的类型系统会在编译时捕获很多错误，但有些错误只能在运行时检查，如数组访问越界、空指针引用等。这些运行时错误会引起painc异常。</p>
+<p>一般而言，当panic异常发生时，程序会中断运行，并立即执行在该goroutine（可以先理解成线程，在第8章会详细介绍）中被延迟的函数（defer 机制）。随后，程序崩溃并输出日志信息。日志信息包括panic value和函数调用的堆栈跟踪信息。panic value通常是某种错误信息。对于每个goroutine，日志信息中都会有与之相对的，发生panic时的函数调用堆栈跟踪信息。通常，我们不需要再次运行程序去定位问题，日志信息已经提供了足够的诊断依据。因此，在我们填写问题报告时，一般会将panic异常和日志信息一并记录。</p>
+<p>不是所有的panic异常都来自运行时，直接调用内置的panic函数也会引发panic异常；</p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>在函数声明时，在其名字之前放上一个变量，即是一个方法。这个附加的参数会将该函数附加到这种类型上，即相当于为这种类型定义了一个独占的方法。</p>
+<p>因此在Go语言里，我们为一些简单的数值、字符串、slice、map来定义一些附加行为很方便。<strong>我们可以给同一个包内的任意命名类型定义方法，只要这个命名类型的底层类型（译注：这个例子里，底层类型是指[]Point这个slice，Path就是命名类型）不是指针或者interface。</strong></p>
+<h3 id="指针对象的方法"><a href="#指针对象的方法" class="headerlink" title="指针对象的方法"></a>指针对象的方法</h3><figure class="highlight go"><table><tr><td class="code"><pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(p *Point)</span></span> ScaleBy(factor <span class="hljs-type">float64</span>) &#123;<br>    p.X *= factor<br>    p.Y *= factor<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>只有类型（Point）和指向他们的指针<code>(*Point)</code>，才可能是出现在接收器声明里的两种接收器。</p>
+<h3 id="内嵌"><a href="#内嵌" class="headerlink" title="内嵌"></a>内嵌</h3><p>一个struct类型也可能会有多个匿名字段。我们将ColoredPoint定义为下面这样：</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">type</span> ColoredPoint <span class="hljs-keyword">struct</span> &#123;<br>    Point<br>    color.RGBA<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>然后这种类型的值便会拥有Point和RGBA类型的所有方法，以及直接定义在ColoredPoint中的方法。当编译器解析一个选择器到方法时，比如p.ScaleBy，它会首先去找直接定义在这个类型里的ScaleBy方法，然后找被ColoredPoint的内嵌字段们引入的方法，然后去找Point和RGBA的内嵌字段引入的方法，然后一直递归向下找。如果选择器有二义性的话编译器会报错，比如你在同一级里有两个同名的方法。</p>
+<p>即 一个struct 可以 调用 内嵌的 struct 的方法  ， 但他作为参数是， 不能是内嵌的struct</p>
+<h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><p>Go语言只有一种控制可见性的手段：大写首字母的标识符会从定义它们的包中被导出，小写字母的则不会。这种限制包内成员的方式同样适用于struct或者一个类型的方法。因而如果我们想要封装一个对象，我们必须将其定义为一个struct。</p>
+<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><p>接口类型具体描述了一系列方法的集合，一个实现了这些方法的具体类型是这个接口类型的实例。</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">package</span> io<br><span class="hljs-keyword">type</span> Reader <span class="hljs-keyword">interface</span> &#123;<br>    Read(p []<span class="hljs-type">byte</span>) (n <span class="hljs-type">int</span>, err <span class="hljs-type">error</span>)<br>&#125;<br><span class="hljs-keyword">type</span> Closer <span class="hljs-keyword">interface</span> &#123;<br>    Close() <span class="hljs-type">error</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>组合</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">type</span> ReadWriter <span class="hljs-keyword">interface</span> &#123;<br>    Reader<br>    Writer<br>&#125;<br><span class="hljs-keyword">type</span> ReadWriteCloser <span class="hljs-keyword">interface</span> &#123;<br>    Reader<br>    Writer<br>    Closer<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="接口的实现"><a href="#接口的实现" class="headerlink" title="接口的实现"></a>接口的实现</h3><p>一个类型如果拥有一个接口需要的所有方法，那么这个类型就实现了这个接口</p>
+<p>T类型的值不拥有所有<code>*T</code>指针的方法，这样它就可能只实现了更少的接口。</p>
+<h3 id="sort-Interface接口"><a href="#sort-Interface接口" class="headerlink" title="sort.Interface接口"></a>sort.Interface接口</h3><p>一个例子</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">type</span> customSort <span class="hljs-keyword">struct</span> &#123;<br>    t    []*Track<br>    less <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">(x, y *Track)</span></span> <span class="hljs-type">bool</span><br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(x customSort)</span></span> Len() <span class="hljs-type">int</span>           &#123; <span class="hljs-keyword">return</span> <span class="hljs-built_in">len</span>(x.t) &#125;<br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(x customSort)</span></span> Less(i, j <span class="hljs-type">int</span>) <span class="hljs-type">bool</span> &#123; <span class="hljs-keyword">return</span> x.less(x.t[i], x.t[j]) &#125;<br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(x customSort)</span></span> Swap(i, j <span class="hljs-type">int</span>)    &#123; x.t[i], x.t[j] = x.t[j], x.t[i] &#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight go"><table><tr><td class="code"><pre><code class="hljs go">sort.Sort(customSort&#123;tracks, <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">(x, y *Track)</span></span> <span class="hljs-type">bool</span> &#123;<br>    <span class="hljs-keyword">if</span> x.Title != y.Title &#123;<br>        <span class="hljs-keyword">return</span> x.Title &lt; y.Title<br>    &#125;<br>    <span class="hljs-keyword">if</span> x.Year != y.Year &#123;<br>        <span class="hljs-keyword">return</span> x.Year &lt; y.Year<br>    &#125;<br>    <span class="hljs-keyword">if</span> x.Length != y.Length &#123;<br>        <span class="hljs-keyword">return</span> x.Length &lt; y.Length<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span><br>&#125;&#125;)<br></code></pre></td></tr></table></figure>
+
+    </div>
+</div>
+<style>
+    #noneimg img {
+        display: none;
+        z-index: 109;
+        width: 600px !important;
+        border-radius: 0px;
+        position: fixed;
+        box-shadow: 0 0 0px #c3c3c300 !important;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto !important;
+    }
+
+    @media screen and (max-width:600px) {
+        #noneimg img {
+            width: 88%
+        }
+    }
+</style>
+<script>
+    $(function () { $('#article').click(function (e) { if (e.target.tagName == "IMG") { if ($('#nonediv').length == 0) { let MImg = `<div id='noneimg'><img src='${e.target.currentSrc}'></div>`; let MDiv = "<div id='nonediv' style='cursor: pointer;display: none; position: fixed;left: 0;top: 0; right: 0;bottom: 0;background-color: #333;opacity:0.5;z-index: 108;'></div>"; $('#article').append(MDiv); $('#article').append(MImg); $("#nonediv").fadeIn("slow"); $("#noneimg img").fadeIn("slow") } } else { if ($('#nonediv').length !== 0) { $("#noneimg ").fadeOut("slow"); $("#nonediv").fadeOut("slow"); setTimeout(function () { $('#nonediv').remove(); $('#noneimg').remove() }, 500) } } }); $('.article-content').addClass('content-move') });
+</script>
+<div class="Last-Next">
+    
+
+    
+    <a href="/2022/04/27/MIT-6-824-01/">
+        <div class="next">
+            <span>下一篇</span>
+            <p>MIT_6.824_01</p>
+        </div>
+    </a>
+    
+</div>
+		
+<link rel="stylesheet" href="/css/food.css">
+
+<div class="footer">
+	<div class="Copyright">
+		©2022 By zfy233. 主题：<a
+			style="text-decoration: none;display: contents; color: #898F9F;"
+			target="_blank" rel="noopener" href="https://github.com/qiaobug/hexo-theme-quiet">Quiet</a>
+	</div>
+	<div class="contact">
+		
+		<a target="_blank" rel="noopener" href="https://github.com/zfy233">
+			<img src="https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imggithub.png" alt="Quiet主题">
+		</a>
+		
+	</div>
+</div>
+
+<script src="/js/jquery.min.js"></script>
+
+
+<script src="/js/gotop.js"></script>
+
+
+<style type="text/css">
+    @media screen and (min-width: 600px) {
+        .goTop>span {
+            display: block;
+            border-radius: 50%;
+            width: 66px;
+            height: 66px;
+            cursor: pointer;
+            opacity: 0.8;
+            background: rgba(18, 24, 58, 0.06);
+            text-align: center;
+            border: 1px solid rgba(18, 24, 58, 0.06);
+
+            transition: border .5s;
+            -moz-transition: border .5s;
+            /* Firefox 4 */
+            -webkit-transition: border .5s;
+            /* Safari 和 Chrome */
+            -o-transition: border .5s;
+            /* Opera */
+        }
+
+        .goTop>span:hover {
+            border: 1px solid #6680B3;
+        }
+
+
+        .goTop {
+            position: fixed;
+            right: 30px;
+            bottom: 80px;
+        }
+
+        .goTop>span>svg {
+            width: 30px;
+            height: 30px;
+            margin-top: 17.5px;
+            opacity: 0.7;
+        }
+
+    }
+
+    @media screen and (max-width: 600px) {
+        .goTop {
+            display: none;
+        }
+    }
+</style>
+<div class="goTop" id="js-go_top">
+    <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <g>
+                <path d="M13 12v8h-2v-8H4l8-8 8 8z"></path>
+            </g>
+        </svg>
+    </span>
+</div>
+<script>
+    $('#js-go_top').gotoTop({ offset: 500, speed: 300, animationShow: { 'transform': 'translate(0,0)', 'transition': 'transform .5s ease-in-out' }, animationHide: { 'transform': 'translate(100px,0)', 'transition': 'transform .5s ease-in-out' } });
+</script>
+<script>
+	console.log('\n %c Hexo-Quiet 主题 %c https://github.com/QiaoBug/hexo-theme-quiet \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
+</script>
+	</body>
+
+</html>

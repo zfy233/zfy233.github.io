@@ -283,7 +283,14 @@
 
 
 <p>其实本小节主要是讲了goroutine之间的同步实例</p>
-<h3 id="Lecture-3-GFS"><a href="#Lecture-3-GFS" class="headerlink" title="Lecture 3  GFS"></a>Lecture 3  GFS</h3>
+<h3 id="Lecture-3-GFS"><a href="#Lecture-3-GFS" class="headerlink" title="Lecture 3  GFS"></a>Lecture 3  GFS</h3><p>big storage:   分片 ———》  产生错误 ————》tolerance—————–&gt;复制——————–&gt;  一致性问题</p>
+<p><img src="C:\Users\FengyiZhou\AppData\Roaming\Typora\typora-user-images\image-20220430223750675.png" alt="image-20220430223750675"></p>
+<p>big and fast, global</p>
+<h4 id="Read"><a href="#Read" class="headerlink" title="Read"></a>Read</h4><p>step 1 name, offset——————-&gt; master</p>
+<p>step 2   master—————-&gt; chunk Handler(handler 知道 这个chunk在哪些服务器上) and  list of servers(可能会cache)</p>
+<p>step 3 c————————&gt; chunk server</p>
+<h4 id="Write"><a href="#Write" class="headerlink" title="Write"></a>Write</h4><p><img src="C:\Users\FengyiZhou\AppData\Roaming\Typora\typora-user-images\image-20220501000724671.png" alt="image-20220501000724671"></p>
+
     </div>
 </div>
 <style>
@@ -311,6 +318,13 @@
     $(function () { $('#article').click(function (e) { if (e.target.tagName == "IMG") { if ($('#nonediv').length == 0) { let MImg = `<div id='noneimg'><img src='${e.target.currentSrc}'></div>`; let MDiv = "<div id='nonediv' style='cursor: pointer;display: none; position: fixed;left: 0;top: 0; right: 0;bottom: 0;background-color: #333;opacity:0.5;z-index: 108;'></div>"; $('#article').append(MDiv); $('#article').append(MImg); $("#nonediv").fadeIn("slow"); $("#noneimg img").fadeIn("slow") } } else { if ($('#nonediv').length !== 0) { $("#noneimg ").fadeOut("slow"); $("#nonediv").fadeOut("slow"); setTimeout(function () { $('#nonediv').remove(); $('#noneimg').remove() }, 500) } } }); $('.article-content').addClass('content-move') });
 </script>
 <div class="Last-Next">
+    
+    <a href="/2022/05/06/go-study-04/">
+        <div class="last">
+            <span>上一篇</span>
+            <p>go_study_04</p>
+        </div>
+    </a>
     
 
     
